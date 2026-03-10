@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>EXO VOP</title>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial;
+color:white;
+overflow-x:hidden;
+background:radial-gradient(circle at 30% 20%, #0a1a4f, #000000 80%);
+}
+
+/* MENU */
+
+.menu{
+position:fixed;
+top:0;
+width:100%;
+padding:20px;
+background:rgba(0,0,0,0.6);
+z-index:10;
+}
+
+.menu a{
+color:#00eaff;
+margin:20px;
+text-decoration:none;
+font-size:20px;
+text-shadow:0 0 10px #00eaff;
+}
+
+/* SECTIONS */
+
+.section{
+height:100vh;
+display:flex;
+align-items:center;
+padding-left:80px;
+}
+
+/* LOGO */
+
+.logo{
+font-size:60px;
+color:#00eaff;
+text-shadow:0 0 20px #00eaff;
+}
+
+/* ETOILES */
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+animation:twinkle 4s infinite;
+}
+
+@keyframes twinkle{
+0%{opacity:0.2;}
+50%{opacity:1;}
+100%{opacity:0.2;}
+}
+
+/* ETOILE FILANTE */
+
+.shooting-star{
+position:absolute;
+width:3px;
+height:3px;
+background:white;
+box-shadow:0 0 10px white;
+animation:shoot 6s linear infinite;
+}
+
+@keyframes shoot{
+0%{transform:translate(-200px,-200px);}
+100%{transform:translate(1600px,700px);}
+}
+
+/* PLANETES */
+
+.planet{
+position:absolute;
+border-radius:50%;
+box-shadow:0 0 40px rgba(255,255,255,0.3);
+}
+
+/* JUPITER */
+
+.jupiter{
+width:180px;
+height:180px;
+background:radial-gradient(circle,#d9a066,#8c5a2b);
+top:120px;
+right:200px;
+}
+
+/* MARS */
+
+.mars{
+width:120px;
+height:120px;
+background:radial-gradient(circle,#ff5e3a,#7a1e10);
+bottom:120px;
+left:200px;
+}
+
+/* SATURNE */
+
+.saturn{
+width:140px;
+height:140px;
+background:radial-gradient(circle,#f5d28c,#8c6a3b);
+top:350px;
+right:500px;
+}
+
+/* ANNEAUX */
+
+.ring{
+position:absolute;
+width:220px;
+height:220px;
+border:4px solid rgba(255,255,255,0.4);
+border-radius:50%;
+top:330px;
+right:480px;
+transform:rotate(20deg);
+}
+
+/* FUSEE */
+
+.rocket{
+position:fixed;
+bottom:-120px;
+left:-120px;
+font-size:60px;
+animation:rocketFly 15s linear infinite;
+}
+
+@keyframes rocketFly{
+0%{transform:translate(0,0) rotate(45deg);}
+100%{transform:translate(1600px,-900px) rotate(45deg);}
+}
+
+/* BOUTON DISCORD */
+
+.discord-btn{
+padding:15px 30px;
+font-size:18px;
+border:none;
+background:#5865F2;
+color:white;
+border-radius:10px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PLANETES -->
+
+<div class="planet jupiter"></div>
+<div class="planet mars"></div>
+<div class="planet saturn"></div>
+<div class="ring"></div>
+
+<!-- FUSEE -->
+
+<div class="rocket">🚀</div>
+
+<!-- SCRIPT ETOILES -->
+
+<script>
+
+for(let i=0;i<160;i++){
+
+let star=document.createElement("div");
+star.className="star";
+
+star.style.top=Math.random()*2000+"px";
+star.style.left=Math.random()*2000+"px";
+
+document.body.appendChild(star);
+
+}
+
+for(let i=0;i<4;i++){
+
+let star=document.createElement("div");
+star.className="shooting-star";
+
+star.style.top=Math.random()*600+"px";
+star.style.left=Math.random()*600+"px";
+
+document.body.appendChild(star);
+
+}
+
+</script>
+
+<!-- MENU -->
+
+<div class="menu">
+
+<a href="#accueil">Accueil</a>
+<a href="#serveur">Serveur</a>
+<a href="#equipe">Équipe</a>
+<a href="#discord">Discord</a>
+
+</div>
+
+<!-- ACCUEIL -->
+
+<div class="section" id="accueil">
+
+<div>
+
+<div class="logo">EXO VOP</div>
+
+<p>
+Bienvenue sur notre serveur EXO VOP.
+</p>
+
+</div>
+
+</div>
+
+<!-- SERVEUR -->
+
+<div class="section" id="serveur">
+
+<div>
+
+<h1>Silix RP</h1>
+
+<p>
+Jeu actuellement en développement.
+</p>
+
+<div style="color:#00ff88;font-size:22px;">
+🚧 Bientôt disponible
+</div>
+
+</div>
+
+</div>
+
+<!-- EQUIPE -->
+
+<div class="section" id="equipe">
+
+<div>
+
+<h1>Notre Équipe</h1>
+
+<p>👑 Fondateur : Djamel</p>
+<p>🛠 Admin : N/A</p>
+<p>🛡 Modérateur : N/A</p>
+
+</div>
+
+</div>
+
+<!-- DISCORD -->
+
+<div class="section" id="discord">
+
+<div>
+
+<h1>Discord</h1>
+
+<a href="https://discord.gg/TONLIEN">
+
+<button class="discord-btn">
+Rejoindre le Discord
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
